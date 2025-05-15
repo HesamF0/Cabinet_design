@@ -1,0 +1,22 @@
+<?php
+include("headerr.php")
+?>
+<?php
+$name=$_POST["name"];
+$ghymat=$_POST["ghymat"];
+$id=$_POST["id"];
+$a=mysqli_connect("localhost","root","","site");
+$b=mysqli_query($a,"INSERT INTO `mdf`(`name`, `ghymat`, `id`) VALUES ('$name','$ghymat','$id');");
+mysqli_close($a);
+?>
+<?php
+if($b)
+{
+ ?>
+ <script>
+    location.replace("indexx.php");
+ </script>   
+ <?php
+}else
+echo("خطا");
+?>
